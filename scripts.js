@@ -175,3 +175,12 @@ document.querySelectorAll('.process-stage').forEach(stage => {
 window.addEventListener('load', function () {
   loadPostIts();
 });
+// Recargar la página después de 10 minutos (600,000 milisegundos)
+window.addEventListener('load', function () {
+  loadPostIts();
+  
+  // Recarga la página cada 10 minutos
+  setInterval(() => {
+    location.reload();
+  }, 600000);  // 600000 milisegundos = 10 minutos
+});
