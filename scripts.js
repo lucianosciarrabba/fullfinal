@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
 import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";  // Importar funciones necesarias de la base de datos
-
 const firebaseConfig = {
   apiKey: "AIzaSyDI-nxjEL1rXvJ9K056zseypp5KrYkRajE",
   authDomain: "proyecto-45613.firebaseapp.com",
@@ -11,13 +10,11 @@ const firebaseConfig = {
   appId: "1:1039764105933:web:2236e401b4f58586869784",
   measurementId: "G-PNFZ8J2EWF"
 };
-
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 // Inicializar la base de datos en tiempo real
 const db = getDatabase(app);
-
 // Función para cargar los post-its desde Firebase
 function loadPostIts() {
   const postItsRef = ref(db, 'postIts');  // Referencia a los post-its
@@ -35,7 +32,6 @@ function loadPostIts() {
     console.error("Error loading post-its:", error);
   });
 }
-
 // Función para crear un post-it y agregarlo a la etapa correspondiente
 function createPostIt(name, type, stageId, id) {
   const postIt = document.createElement('div');
@@ -43,7 +39,6 @@ function createPostIt(name, type, stageId, id) {
   postIt.setAttribute('draggable', 'true');
   postIt.textContent = `${name} - ${type}`;
   postIt.setAttribute('id', id);
-
   // Asignar color según el tipo de edificio
   switch (type) {
     case 'Particular':
@@ -59,12 +54,10 @@ function createPostIt(name, type, stageId, id) {
       postIt.classList.add('bg-success');  // Verde
       break;
   }
-
   // Agregar el post-it a la etapa correspondiente
   document.getElementById(stageId).appendChild(postIt);
-
   // Añadir el evento de eliminar en la última etapa
-  if (stageId === 'stage-8') {
+  if (stageId = 'stage-8') {
     postIt.addEventListener('dblclick', function () {
       // Usamos SweetAlert2 para mostrar un mensaje de confirmación
       Swal.fire({
@@ -78,12 +71,15 @@ function createPostIt(name, type, stageId, id) {
           postIt.remove();
           updateFirebase();  // Actualizar Firebase después de eliminar
           Swal.fire('Proceso finalizado', '', 'success');  // Mensaje de éxito
+          // Recargar la página después de 2 segundos
+          setTimeout(() => {
+            location.reload();
+          }, 2000);
         }
       });
     });
   }
 }
-
 // Función para actualizar Firebase con el estado actual de los post-its
 function updateFirebase() {
   const postIts = [];
@@ -101,8 +97,11 @@ function updateFirebase() {
     acc[postIt.id] = postIt;
     return acc;
   }, {}));
+  // Recargar la página después de 2 segundos
+  setTimeout(() => {
+    location.reload();
+  }, 2000);
 }
-
 // Al enviar el formulario, agregar un nuevo post-it
 document.getElementById('buildingForm').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -121,14 +120,12 @@ document.getElementById('buildingForm').addEventListener('submit', function (e) 
   // Actualizar Firebase
   updateFirebase();
 });
-
 // Función para habilitar el arrastre de los post-its
 document.addEventListener('dragstart', function (event) {
   if (event.target.classList.contains('post-it')) {
     event.dataTransfer.setData('text', event.target.id);  // Almacenar el ID del post-it arrastrado
   }
 });
-
 // Permitir que las celdas reciban los post-its
 document.querySelectorAll('.process-stage').forEach(stage => {
   stage.addEventListener('dragover', function (event) {
@@ -142,14 +139,16 @@ document.querySelectorAll('.process-stage').forEach(stage => {
     stage.appendChild(postIt);
     // Actualizar Firebase cuando un post-it se mueva
     updateFirebase();  // Actualiza los cambios en Firebase
+    // Recargar la página después de 2 segundos
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   });
 });
-
 // Cargar los post-its cuando se recargue la página
 window.addEventListener('load', function () {
   loadPostIts();
 });
-
 // Recargar la página automáticamente cada 5 minutos (300000 ms)
 setInterval(() => {
   location.reload();
