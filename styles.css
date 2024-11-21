@@ -1,0 +1,78 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #646c9a;
+}
+
+.navbar {
+  background-color: #1a1a27; /* Cambia el color de fondo aquí */
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navbar-text {
+  color: #fff; /* Cambia el color del texto (por ejemplo, blanco) */
+  font-size: 30px; /* Cambia el tamaño de la fuente (puedes usar px, em, rem) */
+  font-weight: bold; /* Puedes hacer el texto en negrita si lo deseas */
+  margin-left: 1%;
+}
+
+/* Aseguramos que las celdas tengan una altura mínima para que siempre sea más fácil de colocar los post-its */
+.process-stage {
+  min-height: 60px; /* Ajusta esta altura según tus necesidades */
+  border: 2px solid #ccc; /* Añadir un borde suave para dar más visibilidad */
+  padding: 10px; /* Agregar algo de relleno para que no quede todo pegado */
+  position: relative; /* Necesario si quieres animar las posiciones de los elementos dentro */
+}
+
+/* Opcional: Puedes agregar una transición para hacer más fluido el movimiento del post-it */
+.process-stage .post-it {
+  transition: all 0.3s ease-in-out; /* Suaviza el movimiento del post-it */
+}
+
+
+table{
+  background-color: #fff;
+}
+
+/* Estilo para hacer más angosta la primera columna */
+table th:first-child, table td:first-child {
+  width: 15%; /* Ajusta el valor según lo que necesites */
+  text-align: center; /* Alineación centrada del texto */
+}
+
+
+/* Aseguramos que el contenedor ocupe el 90% del ancho de la pantalla */
+.container {
+  width: 98%;         /* El ancho será el 90% del ancho de la pantalla */
+  max-width: 100%;    /* Evita que el contenedor se estire más allá del 100% */
+  margin: 0 auto;     /* Centra el contenedor en la pantalla */
+  padding: 0 15px;    /* Ajuste de padding si es necesario */
+
+}
+/* Estilos para los post-its */
+.process-stage {
+  display: flex;
+  flex-wrap: wrap;  /* Permite que los post-its se acomoden en una nueva línea si es necesario */
+  justify-content: flex-start;
+  gap: 5px;  /* Espacio entre los post-its */
+}
+
+.post-it {
+  padding: 8px;
+  border-radius: 5px;
+  cursor: grab;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  font-size: 0.85em;
+  text-align: center;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.post-it:hover {
+  background-color: #fff176;
+}
+
+.post-it:active {
+  cursor: grabbing;
+}

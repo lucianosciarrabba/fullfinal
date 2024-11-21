@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proceso de Instalación de Alarmas</title>
+  <!-- Incluir Bootstrap desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar">
+    <img src="logo-FC.png" alt="Icono">
+    <div class="container-fluid">
+      <span class="navbar-text">
+        Instancias del proceso de instalación:
+      </span>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <!-- Formulario para agregar un edificio -->
+    <form id="buildingForm" class="mb-4">
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" id="buildingName" class="form-control" placeholder="Nombre del Edificio" required>
+        </div>
+        <div class="col-md-4">
+          <select id="buildingType" class="form-control" required>
+            <option value="Particular">Particular</option>
+            <option value="Full Tower">Full Tower</option>
+            <option value="Key Tower">Key Tower</option>
+            <option value="Easy Tower">Easy Tower</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary w-100">Agregar Edificio</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Tabla de procesos -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Estado del Proceso</th>
+          <th>Edificios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Por comenzar</td>
+          <td class="process-stage" id="stage-1"></td>
+        </tr>
+        <tr>
+          <td>Cableado</td>
+          <td class="process-stage" id="stage-2"></td>
+        </tr>
+        <tr>
+          <td>En Ejecución de Cableado</td>
+          <td class="process-stage" id="stage-3"></td>
+        </tr>
+        <tr>
+          <td>Instalación de Equipos</td>
+          <td class="process-stage" id="stage-4"></td>
+        </tr>
+        <tr>
+          <td>Armado de Tablero</td>
+          <td class="process-stage" id="stage-5"></td>
+        </tr>
+        <tr>
+          <td>Colocación y Conexión de Tablero</td>
+          <td class="process-stage" id="stage-6"></td>
+        </tr>
+        <tr>
+          <td>Programación y Pruebas</td>
+          <td class="process-stage" id="stage-7"></td>
+        </tr>
+        <tr>
+          <td>Puesta en Marcha</td>
+          <td class="process-stage" id="stage-8"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Incluir jQuery y Bootstrap JS desde CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <!-- Cambié el tipo de script a module -->
+  <script type="module" src="scripts.js"></script>
+</body>
+
+</html>
