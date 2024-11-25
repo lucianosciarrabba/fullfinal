@@ -14,7 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
       // Guardamos un flag en el localStorage indicando que el usuario ha iniciado sesión.
       localStorage.setItem('isLoggedIn', 'true');
       // Redirigimos al usuario a la página principal.
-      window.location.href = "index.html";
+      window.location.href = "page.html";
     } else {
       alert("Usuario o contraseña incorrectos");
     }
