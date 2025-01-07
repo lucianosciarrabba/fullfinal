@@ -77,3 +77,6 @@ table th:first-child, table td:first-child {
 .post-it:active {
   cursor: grabbing;
 }
+.bg-violet {
+  background-color: #8A2BE2;  /* Violeta en código hexadecimal */
+}
