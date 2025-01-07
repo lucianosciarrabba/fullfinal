@@ -1,8 +1,10 @@
+/* Estilos generales del body */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #646c9a;
 }
 
+/* Estilos para la barra de navegación */
 .navbar {
   background-color: #1a1a27; /* Cambia el color de fondo aquí */
   display: flex;
@@ -29,8 +31,8 @@ body {
   transition: all 0.3s ease-in-out; /* Suaviza el movimiento del post-it */
 }
 
-
-table{
+/* Estilo para la tabla */
+table {
   background-color: #fff;
 }
 
@@ -40,15 +42,14 @@ table th:first-child, table td:first-child {
   text-align: center; /* Alineación centrada del texto */
 }
 
-
-/* Aseguramos que el contenedor ocupe el 90% del ancho de la pantalla */
+/* Estilo para el contenedor principal */
 .container {
   width: 98%;         /* El ancho será el 90% del ancho de la pantalla */
   max-width: 100%;    /* Evita que el contenedor se estire más allá del 100% */
   margin: 0 auto;     /* Centra el contenedor en la pantalla */
   padding: 0 15px;    /* Ajuste de padding si es necesario */
-
 }
+
 /* Estilos para los post-its */
 .process-stage {
   display: flex;
