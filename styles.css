@@ -8,7 +8,7 @@ body {
 .navbar {
   background-color: #1a1a27; /* Cambia el color de fondo aquí */
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .navbar-text {
