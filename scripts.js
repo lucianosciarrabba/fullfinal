@@ -74,7 +74,7 @@ function createPostIt(name, type, stageId, id) {
   document.getElementById(stageId).appendChild(postIt);
   
   // Añadir el evento de eliminar en la última etapa
-  if (stageId == 'stage-8') {
+  if (stageId = 'stage-8') {
     postIt.addEventListener('dblclick', function () {
       // Usamos SweetAlert2 para mostrar un mensaje de confirmación
       Swal.fire({
