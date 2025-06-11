@@ -84,3 +84,7 @@ table th:first-child, table td:first-child {
 .bg-naranja {
   background-color: #ff894c;  /* Naranja en código hexadecimal */
 }
+
+.bg-verde {
+  background-color: #42b883;  /* Verde en código hexadecimal */
+}
