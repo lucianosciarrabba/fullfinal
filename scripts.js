@@ -57,7 +57,7 @@ function createPostIt(name, type, stageId, id) {
       postIt.classList.add('bg-warning');  // Amarillo
       break;
     case 'Easy Tower':
-      postIt.classList.add('bg-success');  // Verde
+      postIt.classList.add('bg-verde');  // Verde
       break;
     case 'Adicional':
       postIt.classList.add('bg-naranja');  // Morado (Nuevo)
