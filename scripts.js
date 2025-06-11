@@ -60,13 +60,13 @@ function createPostIt(name, type, stageId, id) {
       postIt.classList.add('bg-success');  // Verde
       break;
     case 'Adicional':
-      postIt.classList.add('bg-secondary');  // Morado (Nuevo)
+      postIt.classList.add('bg-naranja');  // Morado (Nuevo)
       break;
     case 'Upgrade':
       postIt.classList.add('bg-violet');  // Azul (Nuevo)
       break;
     case 'Downgrade':
-      postIt.classList.add('bg-naranja');  // Gris (Nuevo)
+      postIt.classList.add('bg-primary');  // Gris (Nuevo)
       break;
   }
 
