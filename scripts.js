@@ -179,7 +179,7 @@ window.addEventListener('load', function () {
   loadPostIts();
 });
 
-// Recargar la página automáticamente cada 5 minutos (300000 ms)
+// Recargar la página automáticamente cada 30 minutos (1800000 ms)
 setInterval(() => {
   location.reload();
-}, 300000);  // 5 minutos
+}, 1800000);  // 30 minutos
